@@ -31,19 +31,22 @@
   <script src="js/jquery-1.8.0.js"></script>
 </head>
 <body>
-    <div>
-	    <img class="background" src="img/background.jpg" alt="background" title="" /> 
-    </div>
+
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-  <header>
-      <div class="header_main">
-          <img src="img/header.png" alt="header_main" title="" /> 
-      </div>
-      
- <div class="menu">
- <ul id="nav">
+     	<!-- Begin Wrapper -->
+<div id="wrapper">
+    <div class="left_header"></div>    	
+    <div class="right_header"></div>
+
+	<header id="header">
+	<div class="main_header"></div>
+    <div class="logo"></div>    	
+    <div class="logo_hf"></div>
+    <div class="menu">
+    <div class="menu">
+ <ul id="nav_srv">
      <li><a href="#">Сервер</a>
     <ul>
         <li><a href="#">Item 04</a></li>
@@ -54,7 +57,7 @@
         <div class="clear"></div>
     </li>
     </ul>
-     <ul id="nav">
+     <ul id="nav_file">
      <li><a href="#">Файлы</a>
     <ul>
         <li><a href="#">Item 04</a></li>
@@ -65,18 +68,7 @@
         <div class="clear"></div>
     </li>
     </ul>
-     <ul id="nav1">
-     <li><a href="#">Общение</a>
-    <ul>
-        <li><a href="#">Item 04</a></li>
-        <li><a href="#">Item 05</a></li>
-        <li><a href="#">Item 06</a></li>
-        <li><a href="#">Item 07</a></li>
-    </ul>         
-        <div class="clear"></div>
-    </li>
-    </ul>
-     <ul id="nav1">
+     <ul id="nav_soc">
      <li><a href="#">Инфо</a>
     <ul>
         <li><a href="#">Item 04</a></li>
@@ -87,55 +79,86 @@
         <div class="clear"></div>
     </li>
     </ul>
+     <ul id="nav_info">
+     <li><a href="#">Общение</a>
+    <ul>
+        <li><a href="#">Item 04</a></li>
+        <li><a href="#">Item 05</a></li>
+        <li><a href="#">Item 06</a></li>
+        <li><a href="#">Item 07</a></li>
+    </ul>         
+        <div class="clear"></div>
+    </li>
+    </ul>
  </div>
-         
+    </div>
+	</header><!-- #header-->
 
-  </header>
-  <div role="main">
+	<div id="content">
 
-  </div>
-    <div class="main_cont">
-    <div class="news">
-        <p></p>
-    </div>
-    
-    <div class="login">
-        <p></p>
-    </div>
-    <div class="server">
-        <p></p>
-    </div>
-    <div class="login_frame">
-    </div>
-    <div class="news_frame">
-    </div>
-    <div class="server_frame">
-    </div>
-        
-    </div>
-  <footer>
+        <div class="center"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+		
+	</div><!-- #content-->
 
-  </footer>
+</div><!-- #wrapper -->
+
+<footer id="footer">
+	
+</footer><!-- #footer -->
+
+
 
 
   <!-- JavaScript at the bottom for fast page loading -->
 
+
+
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script>
+  
+  <!-- scripts concatenated and minified via build script -->
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <!-- end scripts -->
+
+    <script>
       $(document).ready(function() {
 
-          $('#nav li').hover(
-              function() {
-                  //show its submenu
-                  $('ul', this).stop().slideDown(100);
-                  },
-              function() {
-                  //hide its submenu
-                  $('ul', this).stop().slideUp(100);
-              }
-          );
+          $('#nav_srv li').hover(
+                                      function() {
+                                          //show its submenu
+                                          $('ul', this).stop().slideDown(100);
+                                      },
+                                      function() {
+                                          //hide its submenu
+                                          $('ul', this).stop().slideUp(100);
+                                      }
+                                  );
 
-           $('#nav1 li').hover(
+          $('#nav_file li').hover(
+                                function() {
+                                    //show its submenu
+                                    $('ul', this).stop().slideDown(100);
+                                },
+                                function() {
+                                    //hide its submenu
+                                    $('ul', this).stop().slideUp(100);
+                                }
+                            );
+
+          $('#nav_soc li').hover(
+                    function() {
+                        //show its submenu
+                        $('ul', this).stop().slideDown(100);
+                    },
+                    function() {
+                        //hide its submenu
+                        $('ul', this).stop().slideUp(100);
+                    }
+                );
+
+           $('#nav_info li').hover(
         function () {
             //show its submenu
             $('ul', this).stop().slideDown(100);
@@ -147,10 +170,6 @@
     );
       });
      </script>
-  <!-- scripts concatenated and minified via build script -->
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-  <!-- end scripts -->
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->

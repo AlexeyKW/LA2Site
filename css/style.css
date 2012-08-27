@@ -30,24 +30,325 @@ audio:not([controls]) { display: none; }
  * 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
  */
 
-html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; height: 100%; width: 100%;
+    background: url(../img/background.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position: 0% 0%;
+}
 
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
-body { margin: 0; font-size: 1em; line-height: 1.4; }
-.background{position:absolute; z-index:-2; width:100%; height:100%; min-width: 1024px; min-height: 768px;}
-.header_main{width: 1024px; margin: 0 auto; }
-.header_left{width: 700px; float: left; margin: -354px;}
-.header_right{width: 700px; float: right; margin: -354px 0px;}
-.menu {width: 1024px; margin: -100px auto;}
-.main_cont {width: 1024px; margin: 0px auto;}
-.news {position: relative; width: 498px; height: 425px; margin: 150px auto; background-color: #b28453; opacity: 0.75;}
-.news_frame{position: relative; width: 500px; height: 452px; margin: -600px auto; background-image: url("../img/news.png")}
-.login{position: relative; width: 205px; height: 130px; margin-top: -573px; float:  left; background-color: #b28453; opacity: 0.75;}
-.login_frame{position: relative; width: 265px; height: 244px; margin-top: -628px; margin-left: -30px; float: left; background-image: url("../img/login.png")}
-.server{position: relative; width: 210px; height: 135px; margin-top: -573px; float: right; background-color: #b28453; opacity: 0.75;}
-.server_frame{position: relative; width: 265px; height: 244px; margin-top: -628px; margin-right: -30px; float: right; background-image: url("../img/server.png")}
+body { margin: 0; font-size: 1em; line-height: 1.4; height: 100%;}
 
+#wrapper {width: 100%; margin: 0 auto; min-height: 100%; height: auto !important; height: 100%; }
+.left_header {height: 231px; margin: 0px auto -231px 0px; background-image: url(../img/side.jpg);}
+
+/* Header
+-----------------------------------------------------------------------------*/
+#header {height: 335px; width: 100%;}
+.main_header {height: 335px; margin: 0 auto; width: 1024px; background-image: url(../img/header.png);}
+.logo {height: 201px; width: 831px; margin: -340px auto auto auto; background-image: url(../img/logo.png)}
+.logo_hf {height: 198px; width: 207px; margin: -200px 0px auto auto; background-image: url(../img/logo_hf.png)}
+.menu{height: 50px; margin: 36px auto; width: 1024px;}
+
+
+
+
+
+
+#nav_srv {
+    margin:0; 
+    padding:0; 
+    list-style:none;
+}   
+    /* make the LI display inline */
+    /* it's position relative so that position absolute */
+    /* can be used in submenu */
+    #nav_srv li {
+        float:left; 
+        display:block; 
+        width:159px; 
+        background-image: url("../img/button2.png"); 
+        position:relative;
+        z-index:500; 
+        margin:0px 0px 0px 35px;
+    }
+    /* this is the parent menu */
+    #nav_srv li a {
+        display:block; 
+        padding:12px 5px 0 0px; 
+        font-weight:700;  
+        height:26px; 
+        text-decoration:none; 
+        color:#fff; 
+        text-align:center; 
+        color:#333;
+    }
+     #nav_srv li a:hover {
+        color:#fff;
+    }
+     /* you can make a different style for default selected value */
+    #nav_srv a.selected {
+        color:#f00;
+    }
+        /* submenu, it's hidden by default */
+        #nav_srv ul {
+            position:absolute; 
+            left:0; 
+            display:none; 
+            margin:0 0 0 -1px; 
+            padding:0; 
+            list-style:none;
+        }
+         #nav_srv ul li {
+            width:139px;
+            height: 37px;
+            background-image: url("../img/button_sub.png"); 
+            margin-left: 1px;
+            margin-top: 0px; 
+            
+        }
+         /* display block will make the link fill the whole area of LI */
+        #nav_srv ul a {
+            display:block;  
+            padding: 16px 0px; 
+            color:#222;
+        }
+         #nav_srv ul a:hover {
+            text-decoration:underline;  
+        }
+ 
+/* fix ie6 small issue */
+/* we should always avoid using hack like this */
+/* should put it into separate file : ) */
+html #nav_srv ul {
+    margin:0 0 0 -2px;
+}
+
+#nav_file {
+    margin:0; 
+    padding:0; 
+    list-style:none;
+}   
+    /* make the LI display inline */
+    /* it's position relative so that position absolute */
+    /* can be used in submenu */
+    #nav_file li {
+        float:left; 
+        display:block; 
+        width:162px; 
+        background-image: url("../img/button1.png"); 
+        position:relative;
+        z-index:500; 
+        margin:0px 0px 0px 15px;
+    }
+    /* this is the parent menu */
+    #nav_file li a {
+        display:block; 
+        padding:12px 5px 0 0px; 
+        font-weight:700;  
+        height:26px; 
+        text-decoration:none; 
+        color:#fff; 
+        text-align:center; 
+        color:#333;
+    }
+     #nav_file li a:hover {
+        color:#fff;
+    }
+     /* you can make a different style for default selected value */
+    #nav_file a.selected {
+        color:#f00;
+    }
+        /* submenu, it's hidden by default */
+        #nav_file ul {
+            position:absolute; 
+            left:0; 
+            display:none; 
+            margin:0 0 0 -1px; 
+            padding:0; 
+            list-style:none;
+        }
+         #nav_file ul li {
+            width:139px;
+            height: 37px;
+            background-image: url("../img/button_sub.png"); 
+            margin-left: 12px; 
+            margin-top: 0px;
+            
+        }
+         /* display block will make the link fill the whole area of LI */
+        #nav_file ul a {
+            display:block;  
+            padding: 16px 1px; 
+            color:#222;
+        }
+         #nav_file ul a:hover {
+            text-decoration:underline;  
+        }
+ 
+/* fix ie6 small issue */
+/* we should always avoid using hack like this */
+/* should put it into separate file : ) */
+html #nav_file ul {
+    margin:0 0 0 -2px;
+}
+
+#nav_soc {
+    margin:0; 
+    padding:0; 
+    list-style:none;
+}   
+    /* make the LI display inline */
+    /* it's position relative so that position absolute */
+    /* can be used in submenu */
+    #nav_soc li {
+        float:right; 
+        display:block; 
+        width:162px; 
+        background-image: url("../img/button4.png"); 
+        position:relative;
+        z-index:500; 
+        margin: 0px 25px 0px 5px;
+    }
+    /* this is the parent menu */
+    #nav_soc li a {
+        display:block; 
+        padding:12px 5px 0 0px; 
+        font-weight:700;  
+        height:26px; 
+        text-decoration:none; 
+        color:#fff; 
+        text-align:center; 
+        color:#333;
+    }
+     #nav_soc li a:hover {
+        color:#fff;
+    }
+     /* you can make a different style for default selected value */
+    #nav_soc a.selected {
+        color:#f00;
+    }
+        /* submenu, it's hidden by default */
+        #nav_soc ul {
+            position:absolute; 
+            left:0; 
+            display:none; 
+            margin:0 0 0 -1px; 
+            padding:0; 
+            list-style:none;
+        }
+         #nav_soc ul li {
+            width:139px;
+            height: 37px;
+            background-image: url("../img/button_sub.png"); 
+            margin-right: 2px;
+            margin-top: 0px;
+        }
+         /* display block will make the link fill the whole area of LI */
+        #nav_soc ul a {
+            display:block;  
+            padding: 16px 1px; 
+            color:#222;
+        }
+         #nav_soc ul a:hover {
+            text-decoration:underline;  
+        }
+ 
+/* fix ie6 small issue */
+/* we should always avoid using hack like this */
+/* should put it into separate file : ) */
+html #nav_soc ul {
+    margin:0 0 0 -2px;
+}
+
+#nav_info {
+    margin:0; 
+    padding:0; 
+    list-style:none;
+}   
+    /* make the LI display inline */
+    /* it's position relative so that position absolute */
+    /* can be used in submenu */
+    #nav_info li {
+        float:right; 
+        display:block; 
+        width:159px; 
+        background-image: url("../img/button3.png"); 
+        position:relative;
+        z-index:500; 
+        margin: 0px 10px 0px 0px;
+    }
+    /* this is the parent menu */
+    #nav_info li a {
+        display:block; 
+        padding:12px 5px 0 0px; 
+        font-weight:700;  
+        height:26px; 
+        text-decoration:none; 
+        color:#fff; 
+        text-align:center; 
+        color:#333;
+    }
+     #nav_info li a:hover {
+        color:#fff;
+    }
+     /* you can make a different style for default selected value */
+    #nav_info a.selected {
+        color:#f00;
+    }
+        /* submenu, it's hidden by default */
+        #nav_info ul {
+            position:absolute; 
+            left:0; 
+            display:none; 
+            margin:0 0 0 -1px; 
+            padding:0; 
+            list-style:none;
+        }
+         #nav_info ul li {
+            width:139px;
+            height: 37px;
+            background-image: url("../img/button_sub.png"); 
+            margin-right: 8px;
+            margin-top: 0px;
+        }
+         /* display block will make the link fill the whole area of LI */
+        #nav_info ul a {
+            display:block;  
+            padding: 16px 1px; 
+            color:#222;
+        }
+         #nav_info ul a:hover {
+            text-decoration:underline;  
+        }
+ 
+/* fix ie6 small issue */
+/* we should always avoid using hack like this */
+/* should put it into separate file : ) */
+html #nav_info ul {
+    margin:0 0 0 -2px;
+}
+
+
+
+
+
+
+
+/* Middle
+-----------------------------------------------------------------------------*/
+#content {height: 520px; padding: 0 0 121px; width: 1024px; margin: 0 auto;}
+.center {width: 509px; height: 412px; margin: 20px auto auto auto; background-image: url(../img/news.png)}
+.left {width:  264px; height: 265px; margin: -450px auto auto 0px; background-image: url(../img/login.png)}
+.right {width:  257px; height: 261px; margin: -270px 0px auto auto; background-image: url(../img/server.png)}
+
+/* Footer
+-----------------------------------------------------------------------------*/
+#footer {width: 100%; margin: -121px auto 0; height: 121px; position: relative; background-image: url(../img/footer.jpg)}
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection declarations have to be separate
@@ -56,153 +357,6 @@ body { margin: 0; font-size: 1em; line-height: 1.4; }
 
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
-
-
-
-
-
-
-/* remove the list style */
-#nav {
-    margin:0; 
-    padding:0; 
-    list-style:none;
-}   
-    /* make the LI display inline */
-    /* it's position relative so that position absolute */
-    /* can be used in submenu */
-    #nav li {
-        float:left; 
-        display:block; 
-        width:195px; 
-        background-image: url("../img/button1.png"); 
-        position:relative;
-        z-index:500; 
-        margin:0 1px;
-    }
-    /* this is the parent menu */
-    #nav li a {
-        display:block; 
-        padding:3px 5px 0 5px; 
-        font-weight:700;  
-        height:24px; 
-        text-decoration:none; 
-        color:#fff; 
-        text-align:center; 
-        color:#333;
-    }
-     #nav li a:hover {
-        color:#fff;
-    }
-     /* you can make a different style for default selected value */
-    #nav a.selected {
-        color:#f00;
-    }
-        /* submenu, it's hidden by default */
-        #nav ul {
-            position:absolute; 
-            left:0; 
-            display:none; 
-            margin:0 0 0 -1px; 
-            padding:0; 
-            list-style:none;
-        }
-         #nav ul li {
-            width:170px;
-            background-image: url("../img/button_sub.png"); 
-            float: right; 
-            border-top:0px solid #fff;
-        }
-         /* display block will make the link fill the whole area of LI */
-        #nav ul a {
-            display:block;  
-            height:3px;
-            padding: 24px 1px; 
-            color:#222;
-        }
-         #nav ul a:hover {
-            text-decoration:underline;  
-        }
- 
-/* fix ie6 small issue */
-/* we should always avoid using hack like this */
-/* should put it into separate file : ) */
-html #nav ul {
-    margin:0 0 0 -2px;
-}
-
-#nav1 {
-    margin:0; 
-    padding:0; 
-    list-style:none;
-}   
-    /* make the LI display inline */
-    /* it's position relative so that position absolute */
-    /* can be used in submenu */
-    #nav1 li {
-        float:right; 
-        display:block; 
-        width:195px; 
-        background-image: url("../img/button2.png"); 
-        position:relative;
-        z-index:500; 
-        margin:0 1px;
-    }
-    /* this is the parent menu */
-    #nav1 li a {
-        display:block; 
-        padding:3px 5px 0 5px; 
-        font-weight:700;  
-        height:24px; 
-        text-decoration:none; 
-        color:#fff; 
-        text-align:center; 
-        color:#333;
-    }
-     #nav1 li a:hover {
-        color:#fff;
-    }
-     /* you can make a different style for default selected value */
-    #nav1 a.selected {
-        color:#f00;
-    }
-        /* submenu, it's hidden by default */
-        #nav1 ul {
-            position:absolute; 
-            left:0; 
-            display:none; 
-            margin:0 0 0 -1px; 
-            padding:0; 
-            list-style:none;
-        }
-         #nav1 ul li {
-            width:170px;
-            background-image: url("../img/button_sub.png"); 
-            float:left; 
-            border-top:1px solid #fff;
-        }
-         /* display block will make the link fill the whole area of LI */
-        #nav1 ul a {
-            display:block;  
-            height:3px;
-            padding: 24px 1px; 
-            color:#222;
-        }
-         #nav1 ul a:hover {
-            text-decoration:underline;  
-        }
- 
-/* fix ie6 small issue */
-/* we should always avoid using hack like this */
-/* should put it into separate file : ) */
-html #nav1 ul {
-    margin:0 0 0 -2px;
-}
-
-
-
-
-
 
 
 /* =============================================================================
